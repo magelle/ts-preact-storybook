@@ -1,13 +1,28 @@
 import { Component, h } from 'preact';
 import TodoItem from './todo-item';
+import Todo from './todo';
+
+interface TodoListProps {
+  todos?: Todo[];
+}
 
 interface TodoListState {
-  todos: { text: string }[];
+  todos: Todo[];
   text: string;
 }
 
-export default class TodoList extends Component<{}, TodoListState> {
+export default class TodoList extends Component<TodoListProps, TodoListState> {
+  static defaultProps: TodoListProps = {
+    todos: []
+  };
+
   state = { todos: [], text: '' };
+
+  componentWillMount() {
+    if (this.props.todos) {
+      this.setState({todos: this.props.todos});
+    }
+  }
 
   setText = (e: Event) => {
     this.setState({
