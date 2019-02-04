@@ -1,6 +1,6 @@
 import { Component, h } from 'preact';
 import TodoItem from './todo-item';
-import Todo from './todo';
+import { Todo } from './todo';
 
 interface TodoListProps {
   todos?: Todo[];

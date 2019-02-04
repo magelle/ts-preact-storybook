@@ -1,7 +1,7 @@
 import { storiesOf } from '@kadira/storybook';
 import { h } from 'preact';
 import TodoList from '../src/components/todo-list';
-import Todo from '../src/components/todo';
+import { Todo } from '../src/components/todo';
 
 declare var module;
 
